@@ -1,3 +1,25 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>California House Price Prediction</title>
+</head>
+<body>
+  <div class="login">
+    <h1>California House Price Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="MedInc" placeholder="Median Income" required /><br>
+      <input type="text" name="HouseAge" placeholder="House Age" required /><br>
+      <input type="text" name="AveRooms" placeholder="Average Rooms" required /><br>
+      <input type="text" name="AveBedrms" placeholder="Average Bedrooms" required /><br>
+      <input type="text" name="Population" placeholder="Population" required /><br>
+      <input type="text" name="AveOccup" placeholder="Average Occupancy" required /><br>
+      <input type="text" name="Latitude" placeholder="Latitude" required /><br>
+      <input type="text" name="Longitude" placeholder="Longitude" required /><br>
+      <button type="submit">Predict</button>
+    </form>
+    <br>
+    <h2>{{ prediction_text }}</h2>
+  </div>
+</body>
+</html>
